@@ -1,0 +1,97 @@
+body {
+  text-align: center;
+  font-family: monospace;
+}
+
+.container {
+  background: linear-gradient(
+    0deg,
+    rgb(249, 236, 38) 0%,
+    rgb(241, 206, 102) 61%
+  );
+  border: 1px solid black;
+  width: 600px;
+  padding: 10px;
+  margin-top: 20px;
+}
+.szukaj {
+  border-radius: 50px;
+  width: 300px;
+  position: relative;
+}
+.myDiv {
+  height: 40px;
+  width: 150px;
+  border: solid black 2px;
+  border-radius: 20px;
+  background-color: white;
+  position: relative;
+  left: 100px;
+  top: 30px;
+}
+.miasto {
+  font-size: large;
+  position: relative;
+  top: 6px;
+}
+.klikaj {
+  border-radius: 50px;
+}
+.wynik {
+  border-radius: 30px;
+  width: 100px;
+  text-align: center;
+  position: relative;
+  left: 18px;
+  margin: 30px;
+}
+.obecnatemp {
+  position: relative;
+  top: 40px;
+  right: 40px;
+  font-size: xx-large;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+.data {
+  font-size: medium;
+  position: relative;
+  right: 122px;
+  top: -110px;
+}
+.wind {
+  font-size: medium;
+  position: relative;
+  right: 134px;
+  top: -120px;
+}
+.air {
+  font-size: medium;
+  position: relative;
+  right: 95px;
+  top: -130px;
+}
+.weekday {
+  position: relative;
+  left: 70px;
+  top: -100px;
+}
+.cloud {
+  font-size: 200%;
+  position: relative;
+  top: -105px;
+  left: 20px;
+}
+.temp {
+  position: relative;
+  top: -97px;
+  left: -20px;
+}
+
+.stopka {
+  text-align: center;
+  font-size: small;
+  position: relative;
+  top: -74px;
+  left: 7px;
+}
