@@ -62,13 +62,13 @@ body {
 .wind {
   font-size: medium;
   position: relative;
-  right: 134px;
+  right: 140px;
   top: -120px;
 }
 .air {
   font-size: medium;
   position: relative;
-  right: 95px;
+  right: 115px;
   top: -130px;
 }
 .weekday {

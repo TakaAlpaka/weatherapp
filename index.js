@@ -73,7 +73,9 @@ function showTemperature(response) {
   let ilestopni = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#celc");
   let cisnienieElement = document.querySelector("#cisnienie");
+  let wiatrElement = document.querySelector("#predkoscwiatru");
 
   temperatureElement.innerHTML = `${ilestopni}`;
   cisnienieElement.innerHTML = response.data.main.pressure;
+  wiatrElement.innerHTML = response.data.wind.speed;
 }
