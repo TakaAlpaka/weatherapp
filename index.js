@@ -72,5 +72,8 @@ function showTemperature(response) {
   console.log(response.data);
   let ilestopni = Math.round(response.data.main.temp);
   let temperatureElement = document.querySelector("#celc");
+  let cisnienieElement = document.querySelector("#cisnienie");
+
   temperatureElement.innerHTML = `${ilestopni}`;
+  cisnienieElement.innerHTML = response.data.main.pressure;
 }
