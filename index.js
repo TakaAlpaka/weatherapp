@@ -56,8 +56,9 @@ function convertToCelcius(event) {
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let temp = document.querySelector("#celc");
-  temp.innerHTML = 23;
+  let tempF = (3 * 9) / 5 + 32;
+  let tempElement = document.querySelector("#celc");
+  tempElement.innerHTML = tempF;
 }
 
 let celciusLink = document.querySelector("#f-wynik");
@@ -74,8 +75,12 @@ function showTemperature(response) {
   let temperatureElement = document.querySelector("#celc");
   let cisnienieElement = document.querySelector("#cisnienie");
   let wiatrElement = document.querySelector("#predkoscwiatru");
-
+  let iconElement = document.querySelector("#icon");
   temperatureElement.innerHTML = `${ilestopni}`;
   cisnienieElement.innerHTML = response.data.main.pressure;
   wiatrElement.innerHTML = response.data.wind.speed;
+  iconElement.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }

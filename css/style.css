@@ -82,6 +82,9 @@ body {
   top: -105px;
   left: 20px;
 }
+#icon {
+  width: 20px;
+}
 .temp {
   position: relative;
   top: -97px;
