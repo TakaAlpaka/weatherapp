@@ -76,9 +76,11 @@ function showTemperature(response) {
   let cisnienieElement = document.querySelector("#cisnienie");
   let wiatrElement = document.querySelector("#predkoscwiatru");
   let iconElement = document.querySelector("#icon");
+  let warunkiElement = document.querySelector("#warunkiobecne");
   temperatureElement.innerHTML = `${ilestopni}`;
   cisnienieElement.innerHTML = response.data.main.pressure;
   wiatrElement.innerHTML = response.data.wind.speed;
+  warunkiElement.innerHTML = response.data.weather[0].description;
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`

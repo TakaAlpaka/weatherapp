@@ -71,6 +71,12 @@ body {
   right: 115px;
   top: -130px;
 }
+.warunki {
+  position: relative;
+  font-size: medium;
+  top: -165px;
+  left: -143px;
+}
 .weekday {
   position: relative;
   left: 70px;
@@ -83,7 +89,7 @@ body {
   left: 20px;
 }
 #icon {
-  width: 20px;
+  width: 45px;
 }
 .temp {
   position: relative;
