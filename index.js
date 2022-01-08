@@ -59,7 +59,7 @@ function convertToFahrenheit(event) {
   event.preventDefault();
   let tempF = (ilestopni * 9) / 5 + 32;
   let tempElement = document.querySelector("#celc");
-  tempElement.innerHTML = tempF;
+  tempElement.innerHTML = Math.round(tempF);
 }
 
 let celciusLink = document.querySelector("#f-wynik");
