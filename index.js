@@ -1,4 +1,5 @@
 let now = new Date();
+let ilestopni;
 
 function formatDate() {
   let days = ["sun", "mon", "tue", "wed", "thu", "fri", "sat"];
@@ -51,18 +52,19 @@ form.addEventListener("submit", formatDate);
 function convertToCelcius(event) {
   event.preventDefault();
   let temp = document.querySelector("#celc");
-  temp.innerHTML = 4;
+  temp.innerHTML = ilestopni;
 }
 
 function convertToFahrenheit(event) {
   event.preventDefault();
-  let tempF = (3 * 9) / 5 + 32;
+  let tempF = (ilestopni * 9) / 5 + 32;
   let tempElement = document.querySelector("#celc");
   tempElement.innerHTML = tempF;
 }
 
 let celciusLink = document.querySelector("#f-wynik");
 celciusLink.addEventListener("click", convertToCelcius);
+console.log("temperatura w celcjuszach?", celciusLink);
 
 let fahrenheitLink = document.querySelector("#c-wynik");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
@@ -71,7 +73,8 @@ let apiKey = "105d3bd3eafe9637a2d90b5e0c830daf";
 
 function showTemperature(response) {
   console.log(response.data);
-  let ilestopni = Math.round(response.data.main.temp);
+  ilestopni = Math.round(response.data.main.temp);
+  console.log(ilestopni);
   let temperatureElement = document.querySelector("#celc");
   let cisnienieElement = document.querySelector("#cisnienie");
   let wiatrElement = document.querySelector("#predkoscwiatru");
