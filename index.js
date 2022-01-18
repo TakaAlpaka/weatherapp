@@ -78,11 +78,13 @@ let apiKey = "105d3bd3eafe9637a2d90b5e0c830daf";
 function displayForecast() {
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
+  let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `<div class="row">
             <div class="col-4">
-              <p class="weekday">Friday</p>
+              <p class="weekday">${day}</p>
             </div>
             <div class="col-4">
               <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
@@ -91,58 +93,8 @@ function displayForecast() {
               <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
             </div>
           </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-            <div class="col-4">
-              <p class="weekday">Friday</p>
-            </div>
-            <div class="col-4">
-              <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
-            </div>
-            <div class="col-4">
-              <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
-            </div>
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-            <div class="col-4">
-              <p class="weekday">Friday</p>
-            </div>
-            <div class="col-4">
-              <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
-            </div>
-            <div class="col-4">
-              <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
-            </div>
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-            <div class="col-4">
-              <p class="weekday">Friday</p>
-            </div>
-            <div class="col-4">
-              <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
-            </div>
-            <div class="col-4">
-              <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
-            </div>
-          </div>`;
-  forecastHTML =
-    forecastHTML +
-    `<div class="row">
-            <div class="col-4">
-              <p class="weekday">Friday</p>
-            </div>
-            <div class="col-4">
-              <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
-            </div>
-            <div class="col-4">
-              <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
-            </div>
-          </div>`;
+  });
+
   forecastElement.innerHTML = forecastHTML;
 }
 function showTemperature(response) {
