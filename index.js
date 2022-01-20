@@ -68,14 +68,14 @@ function convertToFahrenheit(event) {
 
 let celciusLink = document.querySelector("#f-wynik");
 celciusLink.addEventListener("click", convertToCelcius);
-console.log("temperatura w celcjuszach?", celciusLink);
 
 let fahrenheitLink = document.querySelector("#c-wynik");
 fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let apiKey = "105d3bd3eafe9637a2d90b5e0c830daf";
 
-function displayForecast() {
+function displayForecast(resopnse) {
+  console.log(resopnse.data.daily);
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
@@ -97,10 +97,16 @@ function displayForecast() {
 
   forecastElement.innerHTML = forecastHTML;
 }
+function getForecast(coordinates) {
+  console.log(coordinates);
+  let apiKey = "105d3bd3eafe9637a2d90b5e0c830daf";
+  let apiURL = `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinates.lat}&lon=${coordinates.lon}&appid=${apiKey}&units=metric`;
+  console.log(apiURL);
+  axios.get(apiURL).then(displayForecast);
+}
+
 function showTemperature(response) {
-  console.log(response.data);
   ilestopni = Math.round(response.data.main.temp);
-  console.log(ilestopni);
   let temperatureElement = document.querySelector("#celc");
   let cisnienieElement = document.querySelector("#cisnienie");
   let wiatrElement = document.querySelector("#predkoscwiatru");
@@ -110,9 +116,11 @@ function showTemperature(response) {
   cisnienieElement.innerHTML = response.data.main.pressure;
   wiatrElement.innerHTML = response.data.wind.speed;
   warunkiElement.innerHTML = response.data.weather[0].description;
+
   iconElement.setAttribute(
     "src",
     `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
   );
+  getForecast(response.data.coord);
+  console.log(response);
 }
-displayForecast();
