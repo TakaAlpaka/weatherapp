@@ -74,25 +74,56 @@ fahrenheitLink.addEventListener("click", convertToFahrenheit);
 
 let apiKey = "105d3bd3eafe9637a2d90b5e0c830daf";
 
-function displayForecast(resopnse) {
-  console.log(resopnse.data.daily);
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = [
+    "Sunday",
+    "Monday",
+    "Tuesday",
+    "Wednesday",
+    "Thursday",
+    "Friday",
+    "Saturday",
+  ];
+
+  return days[day];
+}
+
+function displayForecast(response) {
+  let forecast = response.data.daily;
   let forecastElement = document.querySelector("#forecast");
   let forecastHTML = "";
   let days = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"];
-  days.forEach(function (day) {
-    forecastHTML =
-      forecastHTML +
-      `<div class="row">
+  forecast.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        `<div class="row">
+      
             <div class="col-4">
-              <p class="weekday">${day}</p>
+              <p class="weekday">${formatDay(forecastDay.dt)} </p>
+            </div>
+            
+            <div class="col-4">
+              <p class="cloud"> 
+               <img
+          src="http://openweathermap.org/img/wn/${
+            forecastDay.weather[0].icon
+          }@2x.png"
+          alt=""
+          width="42"
+        /> </p>
             </div>
             <div class="col-4">
-              <p class="cloud"> <img src="https://images2.minutemediacdn.com/image/fetch/c_fill,g_auto,f_auto,h_560,w_850/https%3A%2F%2Fssl.gstatic.com%2Fonebox%2Fweather%2F64%2Fsunny.png" width="36"></p>
-            </div>
-            <div class="col-4">
-              <p class="temp"><span class="temp-min">-3°C</span>/<span class="temp-max">9°C</span></p>
+              <p class="temp"><span class="temp-min">${Math.round(
+                forecastDay.temp.min
+              )}°C</span>/<span class="temp-max">${Math.round(
+          forecastDay.temp.max
+        )}°C</span></p>
             </div>
           </div>`;
+    }
   });
 
   forecastElement.innerHTML = forecastHTML;

@@ -60,18 +60,21 @@ body {
   top: -110px;
 }
 .wind {
+  text-align: center;
   font-size: medium;
   position: relative;
   right: 140px;
   top: -120px;
 }
 .air {
+  text-align: center;
   font-size: medium;
   position: relative;
   right: 115px;
   top: -130px;
 }
 .warunki {
+  text-align: center;
   position: relative;
   font-size: medium;
   top: -165px;
