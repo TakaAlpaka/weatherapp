@@ -5,13 +5,14 @@ body {
 
 .container {
   background: linear-gradient(
-    0deg,
-    rgb(249, 236, 38) 0%,
-    rgb(241, 206, 102) 61%
+    90deg,
+    rgb(182, 175, 178) 3%,
+    rgb(66, 64, 73) 100%
   );
   border: 1px solid black;
   width: 600px;
   padding: 10px;
+  border-radius: 25px;
   margin-top: 20px;
 }
 .szukaj {
@@ -54,41 +55,43 @@ body {
 }
 
 .data {
+  text-align: left;
   font-size: medium;
   position: relative;
-  right: 122px;
+  right: -100px;
   top: -110px;
 }
 .wind {
-  text-align: center;
+  text-align: left;
   font-size: medium;
   position: relative;
-  right: 140px;
+  right: -100px;
   top: -120px;
 }
 .air {
-  text-align: center;
+  text-align: left;
   font-size: medium;
   position: relative;
-  right: 115px;
+  right: -100px;
   top: -130px;
 }
 .warunki {
-  text-align: center;
+  text-align: left;
   position: relative;
   font-size: medium;
   top: -165px;
-  left: -143px;
+  right: -100px;
 }
 .weekday {
-  margin top: 20px;
   text-align: center;
   position: relative;
   left: 70px;
   top: -100px;
-  font-size: 16px
+  font-size: 16px;
 }
-.temp-min{ opacity: 0.6;}
+.temp-min {
+  opacity: 0.6;
+}
 .cloud {
   font-size: 200%;
   position: relative;
