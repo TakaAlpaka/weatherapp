@@ -1,6 +1,6 @@
 body {
   text-align: center;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Monda", sans-serif;
 }
 
 .container {
@@ -15,6 +15,7 @@ body {
   margin-top: 20px;
 }
 .szukaj {
+  font-size: 100%;
   border-radius: 50px;
   width: 300px;
   position: relative;
@@ -36,6 +37,14 @@ body {
 }
 .klikaj {
   border-radius: 50px;
+}
+#f-wynik {
+  color: black;
+  opacity: 0.5;
+}
+#c-wynik {
+  color: black;
+  opacity: 0.5;
 }
 .wynik {
   border-radius: 30px;
@@ -91,7 +100,7 @@ body {
   left: 20px;
 }
 #icon {
-  width: 45px;
+  width: 60px;
 }
 .temp {
   position: relative;
